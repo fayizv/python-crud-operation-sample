@@ -1,0 +1,77 @@
+
+{% load crispy_forms_tags %}  
+{% block content %} 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+       
+
+<!--Register--> 
+
+	
+	  
+<section>
+  <div class="mask d-flex align-items-center h-50 gradient-custom-3 ">
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center h-50">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5 bg-success">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+			  <form method="POST" action="{% url 'register' %}">
+				{% csrf_token %}
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" name="first_name" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">First Name</label>
+                </div>
+
+				<div class="form-outline mb-4">
+					<input type="text" id="form3Example1cg" name="last_name" class="form-control form-control-lg" />
+					<label class="form-label" for="form3Example1cg">Last Name'</label>
+				</div>
+
+				<div class="form-outline mb-4">
+					<input type="text" id="form3Example1cg" name="username" class="form-control form-control-lg" />
+					<label class="form-label" for="form3Example1cg">User Name</label>
+				</div>
+
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg"  name="email"class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example3cg">Email</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg"  name="password1"class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg"  name="password2"class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Repeat  Password</label>
+                </div>
+
+                
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-light btn-block btn-lg gradient-custom-4 text-body" >Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>           
+	</form>
+	
+</div>
+
+{% endblock %}

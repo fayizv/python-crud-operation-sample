@@ -1,0 +1,5 @@
+<form action="" method ="POST">
+    {% csrf_token %}
+    <p>Are you sure to delete "{{UserProfileInfo.username}}"?</p>
+    <input type="submit" value="Delete"/>
+</form>

@@ -1,0 +1,29 @@
+{% extends 'theme.html' %}
+{% load static %}
+
+{% block contant %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% include 'navbar.html' %}
+
+
+<div class="container">
+    <div class="row">
+        {% for product in Products %}
+        <div class="col-md-3 pt-5">
+            <div class="card" style=" background-color:#a6dec2;">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">{{product.spech}}</p>
+                  <p class="card-text">{{product.price}}</p>
+                  <a href="#" class="btn btn-success">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% endblock  %}
